@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">JenkinsCalling</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Jenkins is calling!</string>
+    <string name="hello">Sometimes Jenkins could be a bit annoying...</string>
+    <string name="lets_fake">Let\'s fake</string>
+    <string name="failing">Jenkin\'s build is failing</string>
+    <string name="gotohell">Dear Jenkins, get the f*** out of here</string>
+    <string name="listening">Listening</string>
+    <string name="server">Run Server</string>
+    <string name="success">Jenkin\'s build is awesome</string>
+
+</resources>
