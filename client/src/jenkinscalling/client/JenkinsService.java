@@ -1,7 +1,7 @@
 package jenkinscalling.client;
 
+import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,20 +9,14 @@ import org.apache.http.message.BasicNameValuePair;
 
 import jenkinscalling.client.comm.websockets.WebSocketClient;
 
-import de.roderick.weberknecht.WebSocket;
-import de.roderick.weberknecht.WebSocketConnection;
-import de.roderick.weberknecht.WebSocketEventHandler;
-import de.roderick.weberknecht.WebSocketException;
-import de.roderick.weberknecht.WebSocketMessage;
-
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.Toast;
 
 public class JenkinsService extends Service{
 	private static final String LOG_TAG = "JenkinsService";
+	private WebSocketClient client;
 
 	@Override
 	public IBinder onBind(Intent arg0) {
@@ -39,6 +33,12 @@ public class JenkinsService extends Service{
 	@Override
 	public void onDestroy(){
 		Log.d(LOG_TAG, "OnDestroy");
+		try {
+			client.disconnect();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	private void startBuildFailActivity(){
@@ -58,7 +58,7 @@ public class JenkinsService extends Service{
 			    new BasicNameValuePair("Cookie", "session=abcd")
 		);
 		
-		WebSocketClient client = new WebSocketClient(URI.create("ws://ci.edelight.net:8888/websocket"), new WebSocketClient.Handler() {
+		client = new WebSocketClient(URI.create("ws://ci.edelight.net:8888/websocket"), new WebSocketClient.Handler() {
 		    public void onConnect() {
 		        Log.d(LOG_TAG, "Connected!");
 		    }

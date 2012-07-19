@@ -53,14 +53,14 @@ public class BuildFailActivity extends Activity{
 	};
 	
 	public void onStop(){
-		super.onStop();
-		mediaPlayer.stop();
-		startService(new Intent(getApplicationContext(), JenkinsService.class));		
+		super.onStop();	
 	}
 	
 	public void onPause(){
 		super.onPause();
 		wl.release();
+		mediaPlayer.stop();
+		startService(new Intent(getApplicationContext(), JenkinsService.class));
 	}
 	
 	public void onResume(){
