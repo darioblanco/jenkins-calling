@@ -18,6 +18,7 @@ import android.util.Log;
 
 public class Client {
 	private static final String LOG_TAG = "Client";
+	private static String WEBSOCKET_URL = "ws://example.net:8888/websocket";
 	private Context c;
 	private Application app;
 	private WebSocketClient client;
@@ -31,7 +32,7 @@ public class Client {
 			    new BasicNameValuePair("Cookie", "session=abcd")
 		);
 		
-		client = new WebSocketClient(URI.create("ws://ci.edelight.net:8888/websocket"), new WebSocketClient.Handler() {
+		client = new WebSocketClient(URI.create(WEBSOCKET_URL), new WebSocketClient.Handler() {
 		    public void onConnect() {
 		        Log.d(LOG_TAG, "Connected!");
 		    }

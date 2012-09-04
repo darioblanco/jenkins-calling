@@ -371,7 +371,8 @@ public class HybiParser {
      return copyOfRange(array, start, array.length);
  }
 
- public static class ProtocolError extends IOException {
+ @SuppressWarnings("serial")
+public static class ProtocolError extends IOException {
      public ProtocolError(String detailMessage) {
          super(detailMessage);
      }
