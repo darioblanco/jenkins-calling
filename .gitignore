@@ -9,3 +9,5 @@
 *.apk
 *.ap_
 *.pyc
+*.classpath
+*.project
