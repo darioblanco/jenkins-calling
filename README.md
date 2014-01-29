@@ -8,7 +8,7 @@ There are two types of notifications, showing a window which will override all t
 * Build fixed - the application will show a window with Keyboard Cat playing the Keyboard (that's why he is Keyboard Cat, and Captain Obvious is Obvious)
 
 ### More information
-[The soft jaguar - Jenkins is calling](http://thesoftjaguar.com/blog/post13/)
+[The soft jaguar - Jenkins is calling](http://thesoftjaguar.com/posts/2012/09/04/jenkins-is-calling/)
 
 ### License
 [LGPL](http://www.gnu.org/licenses/lgpl.html)
